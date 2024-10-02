@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Entity
+@Entity(name = "wallet")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,8 +19,8 @@ public class Wallet {
 
     private BigDecimal balance;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "customer_Id")
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
 

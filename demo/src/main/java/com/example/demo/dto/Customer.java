@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
-@Entity
+@Entity(name = "customer")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,13 +19,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer customerId;
 
-    @NotNull
     private String customerName;
 
-    @NotNull
     private String mobileNumber;
 
-    @NotNull
     private String password;
 
 

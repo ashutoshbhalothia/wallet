@@ -11,13 +11,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TransactionRepo extends JpaRepository<Transaction, Integer>{
 
-   public List<Transaction> findByTransactionType(String transactionType);
+   List<Transaction> findByTransactionType(String transactionType);
    
    @Query(value = "FROM Transaction t INNER JOIN t.wallet w WHERE w.walletId=?1")
-   public List<Transaction> findByWallet(Integer walletId);
+   List<Transaction> findByWallet(Integer walletId);
    
-   public List<Transaction> findByTransactionDate(LocalDate transactionDate);
+   List<Transaction> findByTransactionDate(LocalDate transactionDate);
    
-   public List<Transaction> findByTransactionDateBetween(LocalDate startSate, LocalDate endDate);
+   List<Transaction> findByTransactionDateBetween(LocalDate startSate, LocalDate endDate);
 
 }

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "CurrentUserSession")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

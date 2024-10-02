@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "transaction")
 public class Transaction {
 
     @Id
@@ -25,7 +26,8 @@ public class Transaction {
     private String Description;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "wallet_id", nullable = false)
     private Wallet wallet;
 
     public Transaction(String transactionType, LocalDate transactionDate, double amount, String description) {

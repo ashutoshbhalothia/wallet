@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CurrentSessionRepo extends JpaRepository<CurrentUserSession, Integer>{
 
-	public CurrentUserSession findByUuid(String uuid);
+	CurrentUserSession findByUuid(String uuid);
 
 	@Query("FROM CurrentUserSession a WHERE a.userId=?1")
-	public Optional<CurrentUserSession> findByUserId(Integer userId);
+	Optional<CurrentUserSession> findByUserId(Integer userId);
 	
 }

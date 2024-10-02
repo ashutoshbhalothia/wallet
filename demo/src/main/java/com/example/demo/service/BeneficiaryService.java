@@ -40,12 +40,12 @@ public class BeneficiaryService {
         }
 
         Optional<Customer> customer = customerRepo.findById(currUserSession.getUserId());
-        Optional<Wallet> wallet = walletRepo.findById(walletRepo.showCustomerWalletDetails(currUserSession.getUserId()).getWalletId());
 
         if (!customer.isPresent()) {
             throw new CustomerException("Beneficiary is not Registered to the Application.");
         }
 
+        Optional<Wallet> wallet = walletRepo.findById(walletRepo.showCustomerWalletDetails(currUserSession.getUserId()).getWalletId());
         if (!wallet.isPresent()){
             throw new WalletException("Invalid User.");
         }

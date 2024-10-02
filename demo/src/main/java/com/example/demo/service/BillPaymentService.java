@@ -13,9 +13,6 @@ import java.time.LocalDate;
 public class BillPaymentService {
 
     @Autowired
-    private WalletService walletService;
-
-    @Autowired
     private BillPaymentRepo billPaymentRepo;
 
     public String addBillPayment(String targetMobile, String Name, double amount, String billType, LocalDate paymentDate, Integer walletId, String key) throws BillPaymentException {
