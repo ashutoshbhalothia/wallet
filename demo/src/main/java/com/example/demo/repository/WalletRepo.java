@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WalletRepo extends JpaRepository<Wallet, Integer> {
 
-    @Query("FROM Wallet w INNER JOIN w.customer c WHERE c.customerId=?1")
+    @Query("SELECT w FROM wallet w JOIN w.customer c WHERE c.customerId=?1")
     Wallet showCustomerWalletDetails(Integer customerId);
 }

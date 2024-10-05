@@ -6,10 +6,12 @@ import com.example.demo.dto.BankAccountDTO;
 import com.example.demo.dto.Wallet;
 import com.example.demo.exceptions.BankAccountException;
 import com.example.demo.exceptions.CustomerException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public interface BankAccountService {
 
     public Wallet addBankAccount(String key, BankAccountDTO bankAccountDTO) throws CustomerException,BankAccountException;

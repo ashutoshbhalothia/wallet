@@ -19,7 +19,6 @@ public class Wallet {
 
     private BigDecimal balance;
 
-    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
